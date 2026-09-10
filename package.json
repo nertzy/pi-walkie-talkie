@@ -1,0 +1,59 @@
+{
+  "name": "pi-touchtone",
+  "version": "0.1.0",
+  "description": "Local cross-session messaging for Pi agents",
+  "type": "module",
+  "license": "MIT",
+  "author": "Grant Hutchins",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nertzy/pi-touchtone.git"
+  },
+  "homepage": "https://github.com/nertzy/pi-touchtone#readme",
+  "bugs": {
+    "url": "https://github.com/nertzy/pi-touchtone/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-coding-agent",
+    "agents",
+    "messaging"
+  ],
+  "files": [
+    "chat-bubble.ts",
+    "extension.ts",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./extension.ts"
+  },
+  "pi": {
+    "extensions": [
+      "./extension.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm test && npm run typecheck",
+    "pack:check": "node scripts/check-package-contents.mjs"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.85.1",
+    "@earendil-works/pi-ai": "0.85.1",
+    "@earendil-works/pi-tui": "0.85.1",
+    "@types/node": "26.0.0",
+    "typebox": "1.1.24",
+    "typescript": "6.0.2"
+  }
+}
